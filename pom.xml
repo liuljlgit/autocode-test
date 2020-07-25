@@ -10,7 +10,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.7.RELEASE</version>
+        <version>2.3.1.RELEASE</version>
         <relativePath/>
     </parent>
 
@@ -27,6 +27,9 @@
         <vavr.version>0.10.0</vavr.version>
         <lombok.version>1.18.2</lombok.version>
         <fastjson.version>1.2.40</fastjson.version>
+        <springboot.version>2.3.1.RELEASE</springboot.version>
+        <spring.cloud.version>Hoxton.SR3</spring.cloud.version>
+        <validation.version>2.0.1.Final</validation.version>
 
         <ftl.autocode.version>0.0.1-SNAPSHOT</ftl.autocode.version>
         <ftl.basic.version>0.0.1-SNAPSHOT</ftl.basic.version>
@@ -90,10 +93,26 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
+
+        <!-- validation -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${validation.version}</version>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
         <dependencies>
+
+            <!-- SpringCloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 
             <!-- MYSQL -->
             <dependency>
