@@ -4,7 +4,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import com.cloud.ftl.ftlbasic.mapper.IBaseMapper;
 import org.apache.ibatis.annotations.Param;
-import com.cloud.ftl.ftltestclient.entity.ComUser;
+import com.cloud.ftl.ftltest.entity.ComUser;
 
 /**
   * 接口类 IComUserDao

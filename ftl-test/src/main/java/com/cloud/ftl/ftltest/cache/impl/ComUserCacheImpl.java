@@ -9,7 +9,7 @@ import com.cloud.ftl.ftlbasic.service.BaseServiceImpl;
 import com.cloud.ftl.ftlbasic.utils.QueryKeyUtil;
 import com.cloud.ftl.ftlbasic.webEntity.PageBean;
 import com.cloud.ftl.ftltest.cache.IComUserCache;
-import com.cloud.ftl.ftltestclient.entity.ComUser;
+import com.cloud.ftl.ftltest.entity.ComUser;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

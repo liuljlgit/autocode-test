@@ -1,4 +1,4 @@
-package com.cloud.ftl.ftltestclient.entity;
+package com.cloud.ftl.ftltest.entity;
 
 import java.util.Date;
 import java.util.List;

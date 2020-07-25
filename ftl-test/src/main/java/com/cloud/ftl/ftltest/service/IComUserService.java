@@ -1,7 +1,7 @@
 package com.cloud.ftl.ftltest.service;
 
 import com.cloud.ftl.ftlbasic.service.IBaseCache;
-import com.cloud.ftl.ftltestclient.entity.ComUser;
+import com.cloud.ftl.ftltest.entity.ComUser;
 
 /**
  * IComUserService service接口类
