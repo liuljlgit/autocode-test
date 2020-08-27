@@ -1,5 +1,6 @@
 package com.cloud.ftl.ftltest.controller;
 
+import com.cloud.ftl.ftlbasic.enums.Opt;
 import com.cloud.ftl.ftlbasic.webEntity.PageBean;
 import com.cloud.ftl.ftlbasic.webEntity.RespEntity;
 import com.cloud.ftl.ftlbasic.webEntity.CommonResp;
@@ -12,6 +13,7 @@ import com.cloud.ftl.ftltest.entity.ComUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @Slf4j
@@ -34,7 +36,14 @@ public class ComUserCtrl{
     @PostMapping(value = "/list")
     @ApiOperation(value = "查询所有列表" , tags = "xxx",hidden = true, notes = "author: llj")
     public CommonResp<List<ComUser>> selectList(@RequestBody ComUser comUser){
-        return RespEntity.ok(comUserService.selectList(comUser));
+        comUser.setUserId(100001L);
+        comUser.andConditGroup()
+                    .andCondit(ComUser.ACCOUNT, Opt.EQUAL,1)
+                    .orCondit(ComUser.CREATE_TIME,Opt.IS_NULL)
+                .orConditGroup()
+                    .andCondit(ComUser.ENABLED,Opt.EQUAL,(byte)1)
+                    .orCondit(ComUser.ENABLED,Opt.EQUAL,(byte)2);
+        return RespEntity.ok(comUserService.cacheSelectList(comUser));
     }
 
     @PostMapping(value = "/page")
